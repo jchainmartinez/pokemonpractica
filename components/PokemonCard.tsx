@@ -1,12 +1,13 @@
 import React from 'react'
+import Image from 'next/image'
 
-interface PokemonCardProps{
+interface PokemonCardProps {
     name: string,
     image: string,
     types: string[]
 }
 
-export const PokemonCard = ({name, image, types}:PokemonCardProps) => {
+export const PokemonCard = ({ name, image, types }: PokemonCardProps) => {
     return (
         <div>
             <div>
@@ -15,18 +16,17 @@ export const PokemonCard = ({name, image, types}:PokemonCardProps) => {
                     alt={name}
                     fill
                     className='object-contain'
-                />            
+                />
             </div>
 
             <h3>{name}</h3>
             <div>
-                {types.map((type)=>(
-                    <span key ={type}>
+                {types.map((type) => (
+                    <span key={type}>
                         {type}
-                    </span>    
-                ))
-                }
-            </div>    
-        </div>        
+                    </span>
+                ))}
+            </div>
+        </div>
     )
 }

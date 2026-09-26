@@ -1,7 +1,6 @@
 import React from 'react'
 import { ontenerPokemon } from '@/services/pokeApi'
-import {PokemonCard} from '@/components/PokemonCard';
-import Image from 'next/image';
+import { PokemonCard } from '@/components/PokemonCard';
 
 export default async function pokemonPage() {
 
@@ -15,6 +14,9 @@ export default async function pokemonPage() {
             </main>
         )
     }
+
+    const tipos = pokemon.types.map((t: any) => t.type.name);
+
     return (
         <main>
             <h2 className="text-xl capitalize font-semibold mb-2">{pokemon.name}</h2>
@@ -22,7 +24,8 @@ export default async function pokemonPage() {
 
             <PokemonCard
                 name={pokemon.name}
-                image={pokemon.sprites.other['official-artwork'].front_defaul}
+                image={pokemon.sprites.other['official-artwork'].front_default}
+                types={tipos}
             />
         </main>
     )
