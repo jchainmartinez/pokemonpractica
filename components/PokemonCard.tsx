@@ -9,8 +9,24 @@ interface PokemonCardProps {
 
 export const PokemonCard = ({ name, image, types }: PokemonCardProps) => {
     return (
-        <div>
-            <div>
+        <div className ='bg-[#1e2333]
+                        rounded-2x1
+                        p-6
+                        flex
+                        flex-col
+                        items-center
+                        justify-center
+                        transition-all
+                        duration-300
+                        hover:-translate-y-2
+                        hover:shadow-amber-300
+                        border
+                        border-gray-800/50 min-h-[250px]'>
+            <div className='relative
+                            w-32
+                            h-32
+                            mb-4
+                            drop-shadow-[0_10px_10px_rgba(0,0,0,6)]'>
                 <Image
                     src={image}
                     alt={name}
@@ -19,10 +35,17 @@ export const PokemonCard = ({ name, image, types }: PokemonCardProps) => {
                 />
             </div>
 
-            <h3>{name}</h3>
-            <div>
+            <h3 className='text-gray-200
+                            text-lg
+                            font-medium
+                            capitalize
+                            tracking-wide mb-3'>{name}</h3>
+            <div className='flex gap-2'>
                 {types.map((type) => (
-                    <span key={type}>
+                    <span 
+                        key={type}
+                        className='text-xs px-3 py-1
+                                    bg-[#151924]'>            
                         {type}
                     </span>
                 ))}
